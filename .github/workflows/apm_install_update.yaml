@@ -1,0 +1,15 @@
+name: Auto-Update APM Dependencies
+on:
+  push:
+    branches: [test-apm-install-action-clean] # temporary, for testing this action before it lands on main
+  schedule:
+    - cron: '0 9 * * 1' # Run every Monday at 09:00 UTC
+  workflow_dispatch:
+
+jobs:
+  apm-install-update:
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: canonical/canonical-data-mesh-docs/.github/workflows/apm-install-update.yml@add-apm-update-action
+    secrets: inherit
