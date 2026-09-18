@@ -16,7 +16,7 @@ jobs:
       contents: read
       packages: write
     with:
-      ignored-file-patterns: '^apm\.yml$|^apm\.lock\.yaml$|^\.licenserc\.yaml$'
+      ignored-file-patterns: '^apm\.yml$|^apm\.lock\.yaml$|^\.licenserc\.yaml$|^\.github/instructions/|^\.agents/skills/'
       test-timeout: 90
       provider: "k8s"
       channel: "1.32-classic/stable"
