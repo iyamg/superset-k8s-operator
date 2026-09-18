@@ -1,0 +1,12 @@
+name: Auto-Update APM Dependencies
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Run every Monday at 09:00 UTC
+  workflow_dispatch:
+
+jobs:
+  apm-install-update:
+    permissions:
+      contents: write
+    uses: canonical/canonical-data-mesh-docs/.github/workflows/apm-install-update.yaml@add-apm-update-action
+    secrets: inherit
