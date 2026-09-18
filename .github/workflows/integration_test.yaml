@@ -10,12 +10,13 @@ on:
 
 jobs:
   integration-tests:
-    uses: canonical/operator-workflows/.github/workflows/integration_test.yaml@main
+    uses: iyamg/operator-workflows/.github/workflows/integration_test.yaml@main
     secrets: inherit
     permissions:
       contents: read
       packages: write
     with:
+      ignored-file-patterns: '^apm\.yml$|^apm\.lock\.yaml$'
       test-timeout: 90
       provider: "k8s"
       channel: "1.32-classic/stable"
