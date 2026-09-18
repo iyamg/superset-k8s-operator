@@ -8,5 +8,6 @@ jobs:
   apm-install-update:
     permissions:
       contents: write
+      pull-requests: write
     uses: canonical/canonical-data-mesh-docs/.github/workflows/apm-install-update.yaml@add-apm-update-action
     secrets: inherit
